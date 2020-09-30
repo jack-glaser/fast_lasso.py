@@ -6,6 +6,8 @@ Implementation of LASSO is often paired with ridge regression (and/or [elastic n
 
 While these programs can be helpful for researchers who want to include objective function selection as part of their analysis, LASSO is often preferred due to its coefficient shrinkage properties. In such cases, a more computationally efficient solution exists: cyclical coordinate descent (which has a closed-form solution for each descent iteration). For large datasets, or in situations with a large number of predictors, implementation of this solution can lead to substantial speedups. 
 
+A further speedup is implemented for the particular task of pathwise optimization. Since the coefficient path is continuous over <img src="https://latex.codecogs.com/gif.latex?\lambda" />, we implement a "warm start" as we move across the path, pre-initializing the coefficients to the previous solution as different vales of <img src="https://latex.codecogs.com/gif.latex?\lambda" /> are implemented. 
+
 # Versioning
 `fast_lasso.py` is compatible with python 3. 
 
