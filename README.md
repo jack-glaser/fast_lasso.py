@@ -1,4 +1,4 @@
-# lasso.py
+# fast_lasso.py
 [LASSO regression](https://en.wikipedia.org/wiki/Lasso_(statistics)) is a popular tool for addressing the variable selection problem in statistical inference. This package provides a streamlined and quantitatively optimized implementation of the non-stochastic cyclical coordinate descent solution to LASSO and iteratively implements the model over decreasing values of the main parameter <img src="https://latex.codecogs.com/gif.latex?\lambda" /> . 
 
 # Computational Motivation
