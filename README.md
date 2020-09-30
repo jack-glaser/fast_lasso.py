@@ -1,2 +1,12 @@
 # lasso.py
-Provides a computationally optimized LASSO regression model for quick use. 
+[LASSO regression](https://en.wikipedia.org/wiki/Lasso_(statistics)) is a popular tool for addressing the variable selection problem in statistical inference. This package provides a streamlined and quantitatively optimized implementation of the non-stochastic cyclical coordinate descent solution to LASSO and iteratively implements the model over decreasing values of the main parameter <img src="https://latex.codecogs.com/gif.latex?\lambda" /> . 
+
+# Computational Motivation
+Implementation of LASSO is often paired with ridge regression (and/or [elastic net](https://en.wikipedia.org/wiki/Elastic_net_regularization), the hybridized form). Since stochastic gradient descent provides asymptotically converging solutions in most cases across all these functional forms, it is often implemented as the computational solution for any choice elastic net parameters (including the LASSO case, where <img src="https://latex.codecogs.com/gif.latex?\lambda_2" /> = 0). 
+
+While these programs can be helpful for researchers who want to include objective function selection as part of their analysis, LASSO is often preferred due to its coefficient shrinkage properties. In such cases, a more computationally efficient solution exists: cyclical coordinate descent (which has a closed-form solution for each descent iteration). For large datasets, or in situations with a large number of predictors, implementation of this solution can lead to substantial speedups. 
+
+# Versioning
+
+
+# Usage
